@@ -1,0 +1,40 @@
+<H1> The Shoppy ShopPerson </H1>
+
+
+ <h2> This is the {{name}} list  <h2>
+
+
+<br>
+<br>
+<form method = "POST" action = "/item/check">
+        {{#each items}}
+
+            {{#if checked}}
+                    <ul>
+                    <strike>{{name}} x  {{quantity}}</strike>
+                    </ul>
+                    <ul>
+            {{else}}
+                    <ul>
+                    </label><input type="checkbox" name= "checkboxName" value="1">
+                    {{name}} x  {{quantity}}
+                    </ul>
+             {{/if}}
+
+        {{/each}}
+
+    <input type = "submit" value = "Check Off Items">
+    <input type="hidden" name="slug" value={{slug}}>
+</form>
+<br>
+
+<form method = "POST" action = "/item/create">
+Item to add: <input type = "text" name  = "itemToAdd">      x       quantity: <input type = "number" name = "quantityToAdd" >
+<br>
+<br>
+<input type="hidden" name="slug" value={{slug}}>
+<input type = "submit" value = "Add Items">
+</form>
+
+<br>
+ <a href="{{allListUrl}}">Back to All List</a>

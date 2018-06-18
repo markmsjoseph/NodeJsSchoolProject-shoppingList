@@ -1,0 +1,11 @@
+<H1> The Shoppy ShopPerson </H1>
+  <link rel='stylesheet' href='/style.css' />
+
+
+{{#each list}}
+<ul>
+<a href="/list/{{slug}}"> {{name}} </a>
+</ul>
+{{/each}}
+
+ <a href="{{createNewListUrl}}">Create a New List</a>
